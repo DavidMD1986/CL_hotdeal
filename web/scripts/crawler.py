@@ -29,7 +29,7 @@ def run():
             reply_count = int(reply_count)
             up_count = item.find("span", class_="list_votes").text
             up_count = int(up_count)
-            if up_count >= 5:
+            if up_count >= 0:
                 if (Deal.objects.filter(link__iexact=link).count() == 0):
                     Deal( title=title, link=link,
                          reply_count=reply_count, up_count=up_count).save()
